@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bX8-wA-9RX">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--My Board Games-->
+        <scene sceneID="Eb4-Zh-tDQ">
+            <objects>
+                <tableViewController id="XtT-QF-Xy2" customClass="TableViewController" customModule="BoardGameTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="82" sectionHeaderHeight="28" sectionFooterHeight="28" id="XaI-vE-YZp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="90" id="6cM-iD-Y7k" customClass="MyCell" customModule="BoardGameTracker" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="320" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6cM-iD-Y7k" id="MKC-Ci-gQk">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="89.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blank" translatesAutoresizingMaskIntoConstraints="NO" id="vhn-ld-Giv">
+                                            <rect key="frame" x="8" y="8" width="65" height="65"/>
+                                            <animations/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="R" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q8m-IE-PdO">
+                                            <rect key="frame" x="81" y="52" width="223" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ztr-df-XuR">
+                                            <rect key="frame" x="81" y="8" width="223" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <connections>
+                                    <outlet property="boardGameImageView" destination="vhn-ld-Giv" id="vfz-de-AYG"/>
+                                    <outlet property="boardGameName" destination="Ztr-df-XuR" id="vI5-HG-Xkd"/>
+                                    <outlet property="boardGameRentedLabel" destination="q8m-IE-PdO" id="JV7-nC-6Ek"/>
+                                    <segue destination="wHN-ZK-xrO" kind="showDetail" identifier="ShowDetail" id="sgq-1f-XwM"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="XtT-QF-Xy2" id="Bhf-bD-Ob6"/>
+                            <outlet property="delegate" destination="XtT-QF-Xy2" id="NoA-sK-NRn"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="My Board Games" id="pJm-hs-agW">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ofo-B4-JOz">
+                            <connections>
+                                <segue destination="Pq7-Xo-SAl" kind="presentation" identifier="AddBoardGame" id="B6F-pf-EyM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jpd-Q7-cR0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="907" y="247"/>
+        </scene>
+        <!--Rent-->
+        <scene sceneID="HQd-Tf-0db">
+            <objects>
+                <viewController storyboardIdentifier="DetailViewController" id="Aho-IM-9ck" customClass="DetailViewController" customModule="BoardGameTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jXR-tK-qNc"/>
+                        <viewControllerLayoutGuide type="bottom" id="dH7-8Y-dgj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fnp-TY-Fsm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jr5-PQ-hnb">
+                                <rect key="frame" x="16" y="250" width="288" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blank" translatesAutoresizingMaskIntoConstraints="NO" id="ALO-D6-7Of">
+                                <rect key="frame" x="16" y="72" width="130" height="130"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="MtG-BI-Lya"/>
+                                    <constraint firstAttribute="width" constant="130" id="rYc-su-JgV"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="board game name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8cc-8j-75e">
+                                <rect key="frame" x="154" y="72" width="150" height="130"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="uEl-1R-l3c"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rented to:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LOV-M2-1ex">
+                                <rect key="frame" x="16" y="221" width="288" height="20.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o6r-Pe-b8n">
+                                <rect key="frame" x="222" y="72" width="82" height="36"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="82" id="eeI-A0-2G6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Returned"/>
+                                <connections>
+                                    <action selector="returned:" destination="Aho-IM-9ck" eventType="touchUpInside" id="hx3-XR-40E"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LOV-M2-1ex" firstAttribute="trailing" secondItem="fnp-TY-Fsm" secondAttribute="trailingMargin" id="2FP-wI-cjk"/>
+                            <constraint firstItem="ALO-D6-7Of" firstAttribute="top" secondItem="jXR-tK-qNc" secondAttribute="bottom" constant="8" id="3bL-mS-YYG"/>
+                            <constraint firstItem="8cc-8j-75e" firstAttribute="top" secondItem="jXR-tK-qNc" secondAttribute="bottom" constant="8" id="C8h-fF-QQT"/>
+                            <constraint firstItem="LOV-M2-1ex" firstAttribute="top" secondItem="8cc-8j-75e" secondAttribute="bottom" constant="19" id="Fhl-s8-roN"/>
+                            <constraint firstItem="8cc-8j-75e" firstAttribute="leading" secondItem="ALO-D6-7Of" secondAttribute="trailing" constant="8" id="JHB-Dg-dOk"/>
+                            <constraint firstItem="8cc-8j-75e" firstAttribute="trailing" secondItem="fnp-TY-Fsm" secondAttribute="trailingMargin" id="P9k-0U-V97"/>
+                            <constraint firstItem="Jr5-PQ-hnb" firstAttribute="top" secondItem="LOV-M2-1ex" secondAttribute="bottom" constant="8.5" id="g2g-BY-msy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="o6r-Pe-b8n" secondAttribute="trailing" id="mpi-yJ-ORd"/>
+                            <constraint firstItem="LOV-M2-1ex" firstAttribute="leading" secondItem="fnp-TY-Fsm" secondAttribute="leadingMargin" id="pwT-9g-o91"/>
+                            <constraint firstItem="o6r-Pe-b8n" firstAttribute="top" secondItem="jXR-tK-qNc" secondAttribute="bottom" constant="8" id="qVJ-TJ-pYR"/>
+                            <constraint firstItem="Jr5-PQ-hnb" firstAttribute="leading" secondItem="fnp-TY-Fsm" secondAttribute="leadingMargin" id="qpm-Av-8Bg"/>
+                            <constraint firstItem="Jr5-PQ-hnb" firstAttribute="trailing" secondItem="fnp-TY-Fsm" secondAttribute="trailingMargin" id="ueY-nP-qwV"/>
+                            <constraint firstItem="ALO-D6-7Of" firstAttribute="leading" secondItem="fnp-TY-Fsm" secondAttribute="leadingMargin" id="zd9-TR-kP2"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Rent" id="LkS-Ll-fvp">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="AgP-XK-9tQ">
+                            <connections>
+                                <action selector="cancel:" destination="Aho-IM-9ck" id="nD1-Sg-t6c"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="hhG-ab-4cb">
+                            <connections>
+                                <segue destination="FmD-WH-zv2" kind="unwind" identifier="saveandgoback" unwindAction="unwindToBoardGameList:" id="Cqj-wB-PmC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="boardGameNameLabel" destination="8cc-8j-75e" id="B8V-q9-9lk"/>
+                        <outlet property="detailImageView" destination="ALO-D6-7Of" id="EUb-B0-ANH"/>
+                        <outlet property="rentedToTextField" destination="Jr5-PQ-hnb" id="OsX-2G-yCC"/>
+                        <outlet property="saveButton" destination="hhG-ab-4cb" id="Xq4-NA-PJz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="12d-rZ-zd1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="FmD-WH-zv2" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2059" y="247"/>
+        </scene>
+        <!--Add Board Game-->
+        <scene sceneID="Xkx-0l-zkW">
+            <objects>
+                <viewController id="HwE-IL-9Nl" customClass="AddViewController" customModule="BoardGameTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Z4p-kU-YwH"/>
+                        <viewControllerLayoutGuide type="bottom" id="20x-hN-gVc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="prl-rW-BxG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Board game name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYq-nb-Bha">
+                                <rect key="frame" x="16" y="72" width="288" height="20.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Board game image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nky-oc-m2a">
+                                <rect key="frame" x="16" y="151" width="288" height="20.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blank" translatesAutoresizingMaskIntoConstraints="NO" id="xeK-he-rLv">
+                                <rect key="frame" x="16" y="180" width="288" height="200"/>
+                                <animations/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="ATp-Mk-gum"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="cou-mU-v5K" appends="YES" id="AXj-U8-6C0"/>
+                                </connections>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Board game name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7tA-46-dJR">
+                                <rect key="frame" x="16" y="100" width="288" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xeK-he-rLv" firstAttribute="top" secondItem="nky-oc-m2a" secondAttribute="bottom" constant="8.5" id="AH5-d9-IF3"/>
+                            <constraint firstItem="nky-oc-m2a" firstAttribute="top" secondItem="7tA-46-dJR" secondAttribute="bottom" constant="21" id="Agg-qE-Wlq"/>
+                            <constraint firstItem="fYq-nb-Bha" firstAttribute="top" secondItem="Z4p-kU-YwH" secondAttribute="bottom" constant="8" id="BbR-3e-No9"/>
+                            <constraint firstItem="7tA-46-dJR" firstAttribute="leading" secondItem="prl-rW-BxG" secondAttribute="leadingMargin" id="CJ7-0n-j3O"/>
+                            <constraint firstItem="7tA-46-dJR" firstAttribute="top" secondItem="fYq-nb-Bha" secondAttribute="bottom" constant="7.5" id="Pzo-c0-pTE"/>
+                            <constraint firstItem="nky-oc-m2a" firstAttribute="leading" secondItem="prl-rW-BxG" secondAttribute="leadingMargin" id="RJG-v7-n0Q"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xeK-he-rLv" secondAttribute="trailing" id="cH9-7e-Q8k"/>
+                            <constraint firstItem="fYq-nb-Bha" firstAttribute="leading" secondItem="prl-rW-BxG" secondAttribute="leadingMargin" id="fMY-f3-5Ne"/>
+                            <constraint firstItem="7tA-46-dJR" firstAttribute="trailing" secondItem="prl-rW-BxG" secondAttribute="trailingMargin" id="jFS-eF-JD4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fYq-nb-Bha" secondAttribute="trailing" id="mOB-xY-tqV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nky-oc-m2a" secondAttribute="trailing" id="rNH-V8-81K"/>
+                            <constraint firstItem="xeK-he-rLv" firstAttribute="leading" secondItem="prl-rW-BxG" secondAttribute="leadingMargin" id="zSy-Lq-Sau"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Board Game" id="ITS-yv-Dpz">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="7Yh-uE-OYH">
+                            <connections>
+                                <action selector="cancel:" destination="HwE-IL-9Nl" id="5CH-NA-Irv"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="i2Q-hJ-fd3">
+                            <connections>
+                                <segue destination="sfV-g0-1Hv" kind="unwind" unwindAction="unwindToBoardGameList:" id="JDj-lx-P2G"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="boardGameName" destination="7tA-46-dJR" id="XEn-H0-B5F"/>
+                        <outlet property="gameImageView" destination="xeK-he-rLv" id="wIl-iD-TW5"/>
+                        <outlet property="saveButton" destination="i2Q-hJ-fd3" id="Ari-GT-OpT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EM0-XK-oHe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="sfV-g0-1Hv" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="cou-mU-v5K">
+                    <connections>
+                        <action selector="selectImage:" destination="HwE-IL-9Nl" id="xtt-Et-xmh"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1675" y="-293"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bXe-NP-RJI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bX8-wA-9RX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DCW-5V-A5t">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="XtT-QF-Xy2" kind="relationship" relationship="rootViewController" id="gD9-bp-qBt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="STq-1s-G86" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="527" y="247"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DAe-0B-V5Z">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pq7-Xo-SAl" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RWD-vn-Iu9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="HwE-IL-9Nl" kind="relationship" relationship="rootViewController" id="teC-ln-geW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PEe-u3-bcN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1294" y="-60"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0t5-5w-iOk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wHN-ZK-xrO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WNR-34-PV9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Aho-IM-9ck" kind="relationship" relationship="rootViewController" id="q2L-ej-fRY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CkI-Ot-xUQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1675" y="247"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="blank" width="250" height="150"/>
+    </resources>
+</document>
